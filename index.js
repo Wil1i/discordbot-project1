@@ -4,7 +4,6 @@ const config = require("./config.json")
 
 const novaController = require("./controllers/novaController")
 const reactionCondition = require("./controllers/reactionCondition")
-
 const otherConditions = require("./controllers/otherConditions")
 
 const client = new Client({
