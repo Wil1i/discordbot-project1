@@ -1,10 +1,11 @@
-import { Client } from 'discord.js-selfbot-v13';
+const {Client} = require("discord.js-selfbot-v13")
 
 const config = require("./config.json")
 
 const novaController = require("./controllers/novaController")
 const reactionCondition = require("./controllers/reactionCondition")
 const otherConditions = require("./controllers/otherConditions")
+const reactionHandler = require("./controllers/reactionHandler")
 
 const client = new Client({
     checkUpdate: false
@@ -13,6 +14,10 @@ const client = new Client({
 client.on('ready', () => {
     console.log('Client is ready');
 });
+
+client.on("messageReactionAdd", async (message) => {
+    reactionHandler(message)
+})
 
 client.on('messageCreate', async (message) => {
     if (!message.guild) return; 
@@ -25,10 +30,6 @@ client.on('messageCreate', async (message) => {
     // مدیریت پیام‌های مرتبط با نوا
     if (config.nova.channels.includes(message.channel.id) && message.author.id === config.nova.botId)
         novaController(message).then(res => {if(res == true) responseSent = true})
-
-    // بررسی سایر شرایط
-    if (!responseSent && isChannelCondition && message.content.toLowerCase().includes(isChannelCondition.trigger.toLowerCase()))
-        otherConditions(message).then(res => {if(res == true) responseSent = true})
 
     // بررسی پیام‌ها برای اضافه کردن ری‌اکشن
     if (isReactionCondition && message.content.toLowerCase().includes(isReactionCondition.trigger.toLowerCase()))
