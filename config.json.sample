@@ -1,0 +1,32 @@
+{
+  "token" : "",
+  "minRange" : 0,
+  "maxRange" : 0,
+  "messageDelay" : 0,
+
+  "nova" : {
+    "channels" : [
+      "",
+      "",
+      ""
+    ],
+    "botId" : ""
+  },
+
+  "channelConditions" : {
+    "1173487569586114590": { "trigger": "", "response": "", "delay": 0 },
+    "1092773734663852143": { "trigger": "", "response": "", "delay": 0 }, 
+    "1204095927762296863": { "trigger": "", "response": "", "delay": 0 }, 
+    "1077601716498858005": { "trigger": "", "response": "", "delay": 0 }, 
+    "1152161434122334239": { "trigger": "", "response": "", "delay": 0 }, 
+    "1140983326329540668": { "trigger": "", "response": "", "delay": 0 }, 
+    "1279159146624843847": { "trigger": "", "response": "", "delay": 0 }, 
+    "100400957488340598": { "trigger": "", "response": "", "delay": 0 } 
+  },
+
+  "reactionConditions" : {
+      "1278023238311743590": { "trigger": "", "emoji": "" },
+      "1204095927762296863": { "trigger": "", "emoji": "" },
+      "1077601716498858005": { "trigger": "", "emoji": "" }
+  }
+}
